@@ -665,3 +665,1470 @@ FOREIGN KEY ("workout_id")
   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mProductreview Create (0.6ms)[0m  [1m[32mINSERT INTO "productreviews" ("comment", "rating", "product_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "Unbelieveable Pump"], ["rating", 10], ["product_id", 1], ["created_at", "2021-09-02 14:35:02.578467"], ["updated_at", "2021-09-02 14:35:02.578467"]]
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2021-09-02 13:12:29 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/matthewobrien/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/matthewobrien/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.4ms | Allocations: 402)
+Completed 200 OK in 22ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 3431)
+
+
+Started GET "/users" for ::1 at 2021-09-02 13:12:33 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"users"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 344)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/user" for ::1 at 2021-09-02 13:12:45 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"user"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 247)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/workouts" for ::1 at 2021-09-02 13:12:49 -0400
+Processing by WorkoutsController#index as HTML
+  [1m[36mWorkout Load (0.4ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.68ms)
+Completed 200 OK in 35ms (Views: 10.7ms | ActiveRecord: 20.4ms | Allocations: 7239)
+
+
+Started GET "/products" for ::1 at 2021-09-02 13:12:56 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 27ms (Views: 6.4ms | ActiveRecord: 18.7ms | Allocations: 4854)
+
+
+Started GET "/users" for ::1 at 2021-09-02 13:13:25 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController
+Did you mean?  create
+               show):
+  
+actionpack (6.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.2) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2021-09-02 13:13:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.28ms)
+Completed 200 OK in 19ms (Views: 3.5ms | ActiveRecord: 3.5ms | Allocations: 5357)
+
+
+Started GET "/productreview" for ::1 at 2021-09-02 13:13:47 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"productreview"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 294)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/productreviews" for ::1 at 2021-09-02 13:13:52 -0400
+Processing by ProductreviewsController#index as HTML
+  [1m[36mProductreview Load (0.5ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-02 14:35:02.578467000 +0000", updated_at: "2021-09-02 14:35:02.578467000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (0.18ms)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 2.4ms | Allocations: 4222)
+
+
+Started GET "/products" for ::1 at 2021-09-02 13:35:57 -0400
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 16.4ms | Allocations: 6981)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 13:36:09 -0400
+Processing by WorkoutsController#index as HTML
+  [1m[36mWorkout Load (0.4ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.8ms)
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 2.4ms | Allocations: 5073)
+
+
+Started GET "/reviews" for ::1 at 2021-09-02 16:26:56 -0400
+Started GET "/workouts" for ::1 at 2021-09-02 16:26:56 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.74ms)
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 3.6ms | Allocations: 7309)
+
+
+  [1m[36mWorkout Load (0.6ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.76ms)
+Completed 200 OK in 53ms (Views: 24.0ms | ActiveRecord: 17.8ms | Allocations: 16652)
+
+
+Started GET "/reviews" for ::1 at 2021-09-02 16:28:32 -0400
+Started GET "/workouts" for ::1 at 2021-09-02 16:28:32 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.72ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 2540)
+
+
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 2496)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 16:28:37 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 16:28:37 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.62ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 2214)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.58ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.8ms | Allocations: 2661)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 16:28:46 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 16:28:46 -0400
+Processing by ReviewsController#index as */*
+Processing by WorkoutsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mWorkout Load (0.2ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.74ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.21ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 2523)
+
+
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 2486)
+
+
+Started GET "/reviews" for ::1 at 2021-09-02 16:29:45 -0400
+Started GET "/workouts" for ::1 at 2021-09-02 16:29:45 -0400
+Processing by ReviewsController#index as */*
+Processing by WorkoutsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  [1m[36mWorkout Load (1.1ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (1.03ms)
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 2116)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.36ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 1.1ms | Allocations: 2627)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 16:29:48 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 16:29:48 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.34ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.5ms | Allocations: 2231)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.91ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.7ms | Allocations: 2627)
+
+
+Started GET "/reviews" for ::1 at 2021-09-02 16:32:06 -0400
+Started GET "/workouts" for ::1 at 2021-09-02 16:32:06 -0400
+Processing by ReviewsController#index as */*
+Processing by WorkoutsController#index as */*
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+  [1m[36mWorkout Load (1.9ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.74ms)
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms | Allocations: 1898)
+
+
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.64ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 1.9ms | Allocations: 2627)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 16:32:17 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 16:32:17 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.4ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.05ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 2404)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.95ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.6ms | Allocations: 2585)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 17:29:44 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 17:29:44 -0400
+Processing by ReviewsController#index as */*
+Processing by WorkoutsController#index as */*
+  [1m[36mWorkout Load (0.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.59ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 47ms (Views: 46.8ms | ActiveRecord: 38.0ms | Allocations: 5999)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.25ms)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 39.1ms | Allocations: 6883)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 17:31:36 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 17:31:36 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.9ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.62ms)
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.9ms | Allocations: 1787)
+
+
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.28ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.6ms | Allocations: 2627)
+
+
+Started GET "/reviews" for ::1 at 2021-09-02 17:32:47 -0400
+Started GET "/workouts" for ::1 at 2021-09-02 17:32:47 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.65ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 2214)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.43ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 1.2ms | Allocations: 2661)
+
+
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:43 -0400
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:43 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:43 -0400
+Processing by ReviewsController#index as */*
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mWorkout Load (0.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.61ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 58ms (Views: 58.0ms | ActiveRecord: 34.4ms | Allocations: 11199)
+
+
+Completed 200 OK in 59ms (Views: 59.3ms | ActiveRecord: 35.2ms | Allocations: 11700)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.35ms)
+Completed 200 OK in 56ms (Views: 53.6ms | ActiveRecord: 25.6ms | Allocations: 13261)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:44 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:44 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:44 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (1.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.83ms)
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.5ms | Allocations: 2569)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.46ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.9ms | Allocations: 3274)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.51ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 2.2ms | Allocations: 3882)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:45 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:45 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:45 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.85ms)
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 3388)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.44ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.42ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 1.0ms | Allocations: 3753)
+
+
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.7ms | Allocations: 3682)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:45 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:45 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:45 -0400
+  [1m[36mWorkout Load (0.6ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Processing by ReviewsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.87ms)
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.6ms | Allocations: 2529)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.56ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 3469)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.39ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.7ms | Allocations: 2131)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:46 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:46 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:46 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.9ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.65ms)
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.9ms | Allocations: 2116)
+
+
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.32ms)
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 1.4ms | Allocations: 3291)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.47ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.7ms | Allocations: 4177)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:46 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:46 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:46 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (1.1ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.98ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 1.1ms | Allocations: 3207)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.46ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.44ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.1ms | Allocations: 3719)
+
+
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 1.7ms | Allocations: 3682)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:47 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:35:47 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:47 -0400
+  [1m[36mWorkout Load (1.1ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+Processing by ProductsController#index as */*
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+Processing by ReviewsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.83ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 1.1ms | Allocations: 2491)
+
+
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.44ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.7ms | Allocations: 2761)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.4ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.8ms | Allocations: 2588)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:47 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:35:47 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:47 -0400
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+Processing by ProductsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.55ms)
+Processing by ReviewsController#index as */*
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.7ms | Allocations: 2323)
+
+
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.33ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.4ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms | Allocations: 2298)
+
+
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.7ms | Allocations: 2539)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:48 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:48 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:48 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mWorkout Load (0.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.91ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.48ms)
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.5ms | Allocations: 3498)
+
+
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 3167)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.58ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.5ms | Allocations: 4041)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:48 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:48 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:48 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.4ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.95ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 3205)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.59ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.33ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 3597)
+
+
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.7ms | Allocations: 3788)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:49 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:49 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:49 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.9ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.96ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.5ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.9ms | Allocations: 3692)
+
+
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.5ms | Allocations: 3458)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.45ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 3878)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:49 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:49 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:49 -0400
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (1.0ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.22ms)
+  [1m[36mReview Load (2.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.8ms)
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 2.0ms | Allocations: 3050)
+
+
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 1.0ms | Allocations: 3442)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.7ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 1.5ms | Allocations: 4213)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:50 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:35:50 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:50 -0400
+  [1m[36mWorkout Load (0.8ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+Processing by ProductsController#index as */*
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+Processing by ReviewsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.94ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.8ms | Allocations: 2481)
+
+
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.6ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 2945)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.51ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.3ms | Allocations: 2580)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:50 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:50 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:50 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (1.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.91ms)
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.7ms | Allocations: 3027)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.37ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.41ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 2.4ms | Allocations: 3910)
+
+
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.7ms | Allocations: 3651)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:51 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:51 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:51 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mWorkout Load (1.2ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.67ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.69ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 3212)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.2ms | Allocations: 3770)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.53ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.7ms | Allocations: 3845)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:35:53 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:35:53 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/reviews" for ::1 at 2021-09-02 18:35:53 -0400
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (1.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.91ms)
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 1.5ms | Allocations: 2156)
+
+
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.44ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 1.3ms | Allocations: 3597)
+
+
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 2.0ms | Allocations: 3789)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:40:08 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:40:08 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:40:08 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.8ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.44ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.21ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.8ms | Allocations: 3389)
+
+
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.8ms | Allocations: 3568)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.63ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 1.3ms | Allocations: 3845)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:40:09 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:40:09 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:40:09 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductsController#index as */*
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.58ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 3000)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.63ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.48ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.8ms | Allocations: 3750)
+
+
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.4ms | Allocations: 3716)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:40:09 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:40:09 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:40:09 -0400
+  [1m[36mWorkout Load (1.0ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+Processing by ProductsController#index as */*
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.77ms)
+Processing by ReviewsController#index as */*
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.0ms | Allocations: 2195)
+
+
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.56ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 2940)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.55ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.9ms | Allocations: 2518)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:40:10 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:40:10 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:40:10 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mWorkout Load (0.9ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.32ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.57ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 1.1ms | Allocations: 3213)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.9ms | Allocations: 3576)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.59ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 1.2ms | Allocations: 3826)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:40:11 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:40:11 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:40:11 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.8ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.58ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.8ms | Allocations: 3386)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.32ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.44ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 3613)
+
+
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.8ms | Allocations: 3820)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:40:11 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:40:11 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:40:11 -0400
+  [1m[36mWorkout Load (0.6ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.73ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.6ms | Allocations: 2475)
+
+
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.33ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.35ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.8ms | Allocations: 2461)
+
+
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 2425)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:41:10 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:41:10 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:41:10 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductsController#index as */*
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.84ms)
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.34ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 2850)
+
+
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 3069)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.48ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.7ms | Allocations: 3912)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:41:11 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:41:11 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:41:11 -0400
+  [1m[36mWorkout Load (1.0ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+Processing by ReviewsController#index as */*
+Processing by ProductsController#index as */*
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.62ms)
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 1.0ms | Allocations: 2529)
+
+
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.38ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.27ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 1.1ms | Allocations: 3255)
+
+
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 1.2ms | Allocations: 3218)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:41:12 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:41:12 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:41:12 -0400
+  [1m[36mWorkout Load (0.6ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.6ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms | Allocations: 2465)
+
+
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.5ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.31ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.9ms | Allocations: 2468)
+
+
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms | Allocations: 2425)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:41:12 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:41:12 -0400
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.85ms)
+Processing by ProductsController#index as */*
+Started GET "/reviews" for ::1 at 2021-09-02 18:41:12 -0400
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.7ms | Allocations: 2123)
+
+
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Processing by ReviewsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.43ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 1644)
+
+
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.29ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 1370)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:41:13 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:41:13 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:41:13 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mWorkout Load (1.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.48ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.76ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 3394)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.59ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 1.3ms | Allocations: 4053)
+
+
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 3633)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:41:13 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:41:13 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:41:13 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.8ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.59ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.38ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.8ms | Allocations: 3001)
+
+
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 1.2ms | Allocations: 3100)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.69ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.9ms | Allocations: 4021)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:43:15 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:43:15 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:43:15 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductsController#index as */*
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mWorkout Load (0.8ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.42ms)
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.59ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.6ms | Allocations: 3189)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.35ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.8ms | Allocations: 3551)
+
+
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 1.2ms | Allocations: 3648)
+
+
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:43:19 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1505)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:43:24 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 245)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:43:25 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:43:30 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/workouts" for ::1 at 2021-09-02 18:43:38 -0400
+Started GET "/products" for ::1 at 2021-09-02 18:43:38 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/reviews" for ::1 at 2021-09-02 18:43:38 -0400
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (1.0ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.75ms)
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 1.0ms | Allocations: 2968)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.6ms)
+  [1m[36mReview Load (2.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.1ms | Allocations: 3109)
+
+
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.46ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 2.7ms | Allocations: 3932)
+
+
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:43:57 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/products" for ::1 at 2021-09-02 18:46:26 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:46:26 -0400
+Started GET "/workouts" for ::1 at 2021-09-02 18:46:26 -0400
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:46:26 -0400
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by WorkoutsController#index as */*
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mWorkout Load (1.1ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.29ms)
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.41ms)
+Completed 200 OK in 102ms (Views: 101.6ms | ActiveRecord: 0.7ms | Allocations: 70309)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (0.57ms)
+Completed 200 OK in 102ms (Views: 100.9ms | ActiveRecord: 1.1ms | Allocations: 69726)
+
+
+Completed 200 OK in 103ms (Views: 100.9ms | ActiveRecord: 1.1ms | Allocations: 70438)
+
+
+Started GET "/workouts" for ::1 at 2021-09-02 18:46:31 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for ::1 at 2021-09-02 18:46:31 -0400
+Started GET "/reviews" for ::1 at 2021-09-02 18:46:31 -0400
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+Processing by ProductsController#index as */*
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-02 14:35:02.459920000 +0000", updated_at: "2021-09-02 14:35:02.459920000 +0000">
+Processing by ReviewsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.02ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.7ms | Allocations: 2256)
+
+
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price: 20, created_at: "2021-09-02 14:35:02.543665000 +0000", updated_at: "2021-09-02 14:35:02.543665000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (0.51ms)
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-02 14:35:02.508416000 +0000", updated_at: "2021-09-02 14:35:02.508416000 +0000">
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.6ms | Allocations: 2751)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (0.69ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 2623)
+
+
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:46:36 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:46:38 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:46:42 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:00 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:03 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:06 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:08 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:11 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:13 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:42 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:43 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:45 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:46 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:47:50 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:48:03 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:48:04 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:48:09 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:48:13 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:48:14 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'
+Started GET "/url" for 127.0.0.1 at 2021-09-02 18:48:16 -0400
+Processing by FallbackController#index as HTML
+  Parameters: {"path"=>"url"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+  
+ArgumentError (`render file:` should be given the absolute path to a file. 'public/index.html' was given instead):
+  
+app/controllers/fallback_controller.rb:7:in `index'

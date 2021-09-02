@@ -1,25 +1,83 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+import WorkoutsList from './WorkoutsList';
+import YourWorkouts from './YourWorkouts';
+import ProductsList from './ProductsList';
+import YourProducts from './YourProducts';
+import Reviews from './Reviews';
+import Header from './Header';
+import NavBar from './NavBar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [workouts, setWorkouts] = useState([])
+  const [myWorkouts, setMyWorkouts] = useState([])
+  const [products, setProducts] = useState([])
+  const [myProducts, setMyProducts] = useState([])
+  const [reviews, setReviews] = useState([])
+  const selectWorkout = (workout) => {
+    if(myWorkouts.includes(workout)){
+      alert('Already Signed Up for This Workout!')
+    }else{
+    const myWorkoutsList = [...myWorkouts, workout]
+    setMyWorkouts(myWorkoutsList)
+  }}
 
+  const removeWorkout = (workout) => {
+    const myWorkoutsList = [...myWorkouts].filter((myWorkout) => myWorkout.id !== workout.id)
+    setMyWorkouts(myWorkoutsList)
+  }
+  const selectProduct = (product) => {
+    if(myProducts.includes(product)){
+      alert('Already Put In Cart!')
+    }else{
+    const myProductsList = [...myProducts, product]
+    setMyProducts(myProductsList)
+  }}
+
+  const removeProduct = (product) => {
+    const myProductsList = [...myProducts].filter((myProduct) => myProduct.id !== product.id)
+    setMyProducts(myProductsList)
+  }
+
+  useEffect(() => {
+    fetch("http://localhost:3000/workouts")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setWorkouts(data);
+      });
+      fetch("http://localhost:3000/products")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProducts(data);
+      });
+      fetch("http://localhost:3000/reviews")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setReviews(data);})
+}, []);
+
+
+return(
+  
+  <div>
+    <Router>
+    <NavBar />
+    <Header />
+      <Switch>
+        <Route exact path="/workoutslist" component={
+          () => <WorkoutsList workouts={workouts} handleClick={selectWorkout} />}/>
+        <Route exact path="/yourworkouts" component={
+          () => <YourWorkouts workouts={myWorkouts} handleClick={removeWorkout}/>}/>
+          <Route exact path="/productslist" component={
+                () => <ProductsList products={products} handleClick={selectProduct} />}/>
+          <Route exact path="/yourproducts" component={
+                () => <YourProducts products={myProducts} handleClick={removeProduct}/>}/>
+          <Route exact path="/reviews" component={
+            () => <Reviews reviews={reviews} />}/>
+      </Switch>
+    </Router>
+  </div>
+)
+}
 export default App;
