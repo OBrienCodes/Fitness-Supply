@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react';
+import Home from './Home';
 import WorkoutsList from './WorkoutsList';
 import YourWorkouts from './YourWorkouts';
 import ProductsList from './ProductsList';
 import YourProducts from './YourProducts';
+import Personaltraining from './Personaltraining';
+import Onlinecoaching from './Onlinecoaching';
 import Reviews from './Reviews';
+import Contact from './Contact';
 import Header from './Header';
 import NavBar from './NavBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -65,6 +69,8 @@ return(
     <NavBar />
     <Header />
       <Switch>
+        <Route exact path ="/home" component={
+          () => <Home/>}/>
         <Route exact path="/workoutslist" component={
           () => <WorkoutsList workouts={workouts} handleClick={selectWorkout} />}/>
         <Route exact path="/yourworkouts" component={
@@ -73,8 +79,14 @@ return(
                 () => <ProductsList products={products} handleClick={selectProduct} />}/>
           <Route exact path="/yourproducts" component={
                 () => <YourProducts products={myProducts} handleClick={removeProduct}/>}/>
+          <Route exact path ="/personaltraining" component={
+          () => <Personaltraining/>}/>      
+          <Route exact path ="/onlinecoaching" component={
+          () => <Onlinecoaching/>}/>
           <Route exact path="/reviews" component={
             () => <Reviews reviews={reviews} />}/>
+          <Route exact path ="/contact" component={
+          () => <Contact/>}/>  
       </Switch>
     </Router>
   </div>
