@@ -10,6 +10,22 @@ class ReviewsController < ApplicationController
         render json:review 
     end 
 
+    def destroy
+        review = Review.find(params[:id])
+        review.destroy
+        render json: {message:'Review deleted'}
+    end 
+
+    def update
+        review = Review.find(params[:id])
+        review.update(review_params)
+        if review.valid?
+         render json:review
+        else
+            render json:{error: review.errors.full_messages} 
+        end 
+    end 
+
     private
 
     def review_params

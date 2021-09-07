@@ -35,11 +35,11 @@ Review.create(user_id: user2.id, workout_id: workout1.id, comment: "Too difficul
 
 Review.create(user_id: user3.id, workout_id: workout1.id, comment: "What a pump!", rating:10)
 
-product1 = Product.create(name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "url", price:20)
+product1 = Product.create(name: "Resistance Bands Set", description: "Full body pump anywhere you go", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTXrlyisB9ikEsY8G4BV0g-4TgZF1wmYcAwA&usqp=CAU", price:20)
 
-product2 = Product.create(name: "Raging Bull Energy Drink", description: "Go Insane!", image_url: "url", price:5)
+product2 = Product.create(name: "Raging Bull Energy Drink", description: "Go Insane!", image_url: "https://pbs.twimg.com/profile_images/545921868012986368/Ebp4QyWd.jpeg", price:5)
 
-product3 = Product.create(name: "Speed Jump Rope", description: "Faster feet, faster hands", image_url: "url", price:35)
+product3 = Product.create(name: "Speed Jump Rope", description: "Faster feet, faster hands", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx9S4_l_1dEZDo_aVaI-MABC0wJM0YhcaXwA&usqp=CAU", price:35)
 
 Productreview.create(product_id: product1.id, comment: "Unbelieveable Pump", rating:10)
 puts "done seeding"
