@@ -8,8 +8,8 @@ function ReviewsCard({ review }) {
         key={review.id}
       >
             <div>
-            <h2>{review.user_id.name}</h2>
-            <img alt="Oops" src={review.user_id.image_url} />
+            <h2>{review.user.name}</h2>
+            <img alt="Oops" src={review.user.image_url} />
           </div>
         
         <div className="content">
