@@ -12,6 +12,7 @@ import Header from './Header';
 import NavBar from './NavBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Createreviewform from './Createreviewform';
 
 function App() {
   const [workouts, setWorkouts] = useState([])
@@ -21,7 +22,7 @@ function App() {
   const [reviews, setReviews] = useState([])
   const selectWorkout = (workout) => {
     if(myWorkouts.includes(workout)){
-      alert('Already Signed Up for This Workout!')
+      
     }else{
     const myWorkoutsList = [...myWorkouts, workout]
     setMyWorkouts(myWorkoutsList)
@@ -47,18 +48,18 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3000/workouts")
       .then((resp) => resp.json())
-      .then((data) => {
-        setWorkouts(data);
+      .then((workoutsarray) => {
+        setWorkouts(workoutsarray);
       });
       fetch("http://localhost:3000/products")
       .then((resp) => resp.json())
-      .then((data) => {
-        setProducts(data);
+      .then((productsarray) => {
+        setProducts(productsarray);
       });
       fetch("http://localhost:3000/reviews")
       .then((resp) => resp.json())
-      .then((data) => {
-        setReviews(data);})
+      .then((reviewsarray) => {
+        setReviews(reviewsarray);})
 }, []);
 
 
@@ -78,7 +79,7 @@ return(
           <Route exact path="/productslist" component={
                 () => <ProductsList products={products} handleClick={selectProduct} />}/>
           <Route exact path="/yourproducts" component={
-                () => <YourProducts products={myProducts} handleClick={removeProduct}/>}/>
+                () => <YourProducts products={myProducts} setMyProducts={setMyProducts} handleClick={removeProduct}/>}/>
           <Route exact path ="/personaltraining" component={
           () => <Personaltraining/>}/>      
           <Route exact path ="/onlinecoaching" component={

@@ -20,6 +20,7 @@ function Productcard({ product, handleClick}) {
           <div className="meta text-wrap">
             <small>{product.description}</small>
             <br></br>
+            <small>${product.price}</small>
             
           </div>
         

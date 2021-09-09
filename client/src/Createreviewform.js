@@ -1,15 +1,42 @@
-function Createreviewform(){
+import React, {useState} from "react";
+
+function Createreviewform({workout}){
+    const [createReview, setCreateReview] = useState(null)
+    const [inputRating, setInputRating] = useState(null)
+
+function NewReview(workout,createReview,inputRating) {
+    fetch("http://localhost:3000/reviews",{
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+            user_id: 1,
+            workout_id: workout.id,
+            comment: createReview,
+            rating: inputRating
+    })
+})
+    .then((resp) => resp.json())
+    .then((reviewsarray) => {
+      console.log(reviewsarray);
+})
+}
+function handleSubmit(e){
+    e.preventDefault()
+    NewReview(workout,createReview,inputRating)
+}
+    
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
-                <label>Username</label>
-                <input type='text'/>
-                <label>Password</label>
-                <input type='text'/>
                 <label>Leave Your Review</label>
-                <input type='text'/>
+                <input type='text' onChange={(e) => setCreateReview(e.target.value)}/>
+                <br></br>
                 <label>Rating</label>
-                <input type='text'/>
+                <input type='text' onChange={(e) => setInputRating(e.target.value)}/>
+                <br></br>
+                <button type="submit">Submit Review</button>
             </div>
         </form>
     )

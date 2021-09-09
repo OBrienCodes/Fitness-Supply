@@ -15,7 +15,7 @@ function ReviewsCard({ review }) {
         <div className="content">
         
           <div className="meta text-wrap">
-            <small>{review.user_id}</small>
+            <small>{review.workout_id}</small>
             <br></br>
             <small>{review.comment}</small>
             <br></br>

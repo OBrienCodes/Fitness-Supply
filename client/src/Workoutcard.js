@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
+import Createreviewform from "./Createreviewform";
 
-function WorkoutCard({ workout, handleClick}) {
+function WorkoutCard({ workout, handleClick,}) {
   return (
     <div className="ui column">
       <div
@@ -18,11 +19,12 @@ function WorkoutCard({ workout, handleClick}) {
         <div className="content">
         
           <div className="meta text-wrap">
+          <small>Exercise Number: {workout.id}</small>
+          <br></br>
             <small>{workout.description}</small>
             <br></br>
-            <button onClick>Review</button>
+            <Createreviewform workout={workout}/>
           </div>
-        
         </div>  
      </div>
     </div>
