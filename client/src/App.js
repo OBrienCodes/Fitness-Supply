@@ -46,17 +46,17 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:3000/workouts")
+    fetch("/workouts")
       .then((resp) => resp.json())
       .then((workoutsarray) => {
         setWorkouts(workoutsarray);
       });
-      fetch("http://localhost:3000/products")
+      fetch("/products")
       .then((resp) => resp.json())
       .then((productsarray) => {
         setProducts(productsarray);
       });
-      fetch("http://localhost:3000/reviews")
+      fetch("/reviews")
       .then((resp) => resp.json())
       .then((reviewsarray) => {
         setReviews(reviewsarray);})

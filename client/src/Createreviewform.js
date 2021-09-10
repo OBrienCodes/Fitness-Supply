@@ -5,7 +5,7 @@ function Createreviewform({workout}){
     const [inputRating, setInputRating] = useState(null)
 
 function NewReview(workout,createReview,inputRating) {
-    fetch("http://localhost:3000/reviews",{
+    fetch("/reviews",{
     method: "POST",
     headers: {
         "Content-Type": "application/json",
