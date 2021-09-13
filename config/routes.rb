@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :productreviews, only: [:index, :create, :destory]
-  resources :reviews, only: [:index, :create, :destory]
+  resources :productreviews, only: [:index, :create, :destroy]
+  resources :reviews, only: [:index, :create, :destroy]
   resources :workouts, only: [:index]
   resources :users, only: [:index, :show, :create]
   resources :products, only: [:index]

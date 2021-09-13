@@ -1,6 +1,12 @@
 import React from "react";
 
 function ReviewsCard({ review }) {
+
+  function DeleteReview(){
+    fetch(`/reviews/${review.id}`,{
+      method: "Delete"
+  })
+}
   return (
     <div className="ui column">
       <div
@@ -21,9 +27,7 @@ function ReviewsCard({ review }) {
             <br></br>
             <small>{review.rating}</small>
             <br></br>
-            <button onClick>Edit</button> 
-            <br></br>
-            <button onClick>Delete</button>
+            <button onClick={DeleteReview}>Delete</button>
           </div>
         
         </div>  
