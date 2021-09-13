@@ -10,6 +10,7 @@ import Reviews from './Reviews';
 import Contact from './Contact';
 import Header from './Header';
 import NavBar from './NavBar';
+import Productreviews from './Productreviews';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Createreviewform from './Createreviewform';
@@ -20,6 +21,7 @@ function App() {
   const [products, setProducts] = useState([])
   const [myProducts, setMyProducts] = useState([])
   const [reviews, setReviews] = useState([])
+  const [productreviews, setProductReviews] = useState([])
   const selectWorkout = (workout) => {
     if(myWorkouts.includes(workout)){
       
@@ -56,6 +58,11 @@ function App() {
       .then((productsarray) => {
         setProducts(productsarray);
       });
+      fetch("/productreviews")
+      .then((resp) => resp.json())
+      .then((productreviewsarray) => {
+        setProductReviews(productreviewsarray);
+      });
       fetch("/reviews")
       .then((resp) => resp.json())
       .then((reviewsarray) => {
@@ -86,6 +93,8 @@ return(
           () => <Onlinecoaching/>}/>
           <Route exact path="/reviews" component={
             () => <Reviews reviews={reviews} />}/>
+          <Route exact path="/productreviews" component={
+            () => <Productreviews productreviews={productreviews} />}/>
           <Route exact path ="/contact" component={
           () => <Contact/>}/>  
       </Switch>

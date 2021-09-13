@@ -14,7 +14,8 @@ function NavBar() {
       <Link to="/yourproducts">Cart</Link>
       <Link to="/personaltraining">Personal Training</Link>
       <Link to="/onlinecoaching">Online Coaching</Link>
-      <Link to="/reviews">Reviews</Link>  
+      <Link to="/reviews">Reviews</Link>
+      <Link to="/productreviews">Product Reviews</Link>   
       <Link to="/contact">Contact</Link>
     </nav>
   );

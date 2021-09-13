@@ -2,7 +2,7 @@ class ProductreviewsController < ApplicationController
 
     def index 
         productreviews = Productreview.all
-        render json:productreviews
+        render json:productreviews, include: :product
     end 
 
     def create
