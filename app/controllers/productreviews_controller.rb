@@ -10,6 +10,12 @@ class ProductreviewsController < ApplicationController
         render json:productreview 
     end 
 
+    def destroy
+        review = Productreview.find(params[:id])
+        review.destroy
+        render json: {message:'Product review deleted'}
+    end 
+
     private
 
     def productreview_params

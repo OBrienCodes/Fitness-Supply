@@ -1,4 +1,5 @@
 import React from "react";
+import Createproductreviewform from "./Productreviewform";
 
 function Productcard({ product, handleClick}) {
   return (
@@ -21,6 +22,7 @@ function Productcard({ product, handleClick}) {
             <small>{product.description}</small>
             <br></br>
             <small>${product.price}</small>
+            <Createproductreviewform product={product}/>
             
           </div>
         
