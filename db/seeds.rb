@@ -38,6 +38,15 @@ image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVKlsNtQiy-_Fs
 workout9 = Workout.create(name: "Jumprope Jitters", description: "Footwork and cardio crazy!", 
 image_url: "https://i5.walmartimages.com/asr/d4626cd8-2fbf-4c7e-9125-b3b480ea8dd8.2e3c2c5ecf26a0a793431e2144639cfa.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff",)
 
+workout10 = Workout.create(name: "Jumping Jack", description: "Get moving!", 
+image_url: "https://i.ytimg.com/vi/1b98WrRrmUs/maxresdefault.jpg",)
+
+workout11 = Workout.create(name: "Super sprints", description: "Push your hardest!", 
+image_url: "https://cdn.shopify.com/s/files/1/0062/5532/files/i_stock_male_sprinter_image_xlg_size_6eec9ade-abd6-4641-af37-dd92b0680a5d.jpg?v=1523547218",)
+
+workout12 = Workout.create(name: "Circut Circus", description: "Keep going until failure!", 
+image_url: "https://darebee.com/images/workouts/quick-hiit-workout.jpg",)
+
 Review.create(user_id: user1.id, workout_id: workout1.id, comment: "Kicked my butt!", rating:7)
 
 Review.create(user_id: user2.id, workout_id: workout1.id, comment: "Too difficult!", rating:4)
