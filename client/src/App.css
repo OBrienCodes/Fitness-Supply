@@ -54,8 +54,8 @@ header {
   border-bottom: 10px solid #082b34;
 }
 
-Home {
-  text-align:center;
-
+div {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 

@@ -4,7 +4,7 @@ import WorkoutCard from "./Workoutcard";
 function YourWorkouts({workouts, handleClick}) {
     return (
         <div>
-            <h1> Your Workouts</h1>
+            <h1>There are no shortcuts to results, put in the work!</h1>
             {
             workouts.map(workout => (
               <WorkoutCard key={workout.id} workout={workout} handleClick={handleClick}/>
