@@ -14,14 +14,14 @@ function ProductReviewsCard({ productreview }) {
         key={productreview.id}
       >
             <div>
-            <h2>{productreview.id}</h2>
+            <h2>{productreview.product.name}</h2>
             <img alt="Oops" src={productreview.product.image_url} />
           </div>
         
         <div className="content">
         
           <div className="meta text-wrap">
-            <small>{productreview.product_id}</small>
+            <small>Customer Review</small>
             <br></br>
             <small>{productreview.comment}</small>
             <br></br>
