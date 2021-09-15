@@ -28,18 +28,16 @@ header {
   max-height: 375px;
   max-width: 100%;
   min-width: 100%;
-  text-align: left;
+  text-align: center;
   align-content: flex-end;
   background-size: 100%;
   background-image: url(https://cdn.quotesgram.com/img/48/5/1503676473-blog-hero-banner-quote.jpg) ;
   background-position: top;
   margin-top: 0mm;
-  border-bottom: 10px solid #082b34;
 }
 
 .maindiv{
   background-color: rgb(255, 255, 255);
-  background-size:100%;
 
 }
 
@@ -48,6 +46,15 @@ div {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.home-container{
+  background-image: url(http://static.oprah.com/images/o2/200209-omag-mountain-949x534.jpg);
+  background-size: 100%;
+  background-position: top;
+  padding-left: 1%;
+  padding-right: 25%;
+  text-align: left;
+  font-size:xx-large;
+}
 .workout-container{
   display: grid;
   grid-row: auto;
@@ -73,11 +80,23 @@ div {
 }
 
 .personaltraining-container{
-  background-color: chartreuse;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA9Ot8TUg8F1pmWsIeFyKCglgJ2pJk9P5zzRIhsmTluUN7-3fnIIAchSQyRFvHolUoASA&usqp=CAU);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size:xx-large;
 }
 
 .onlinecoaching-container{
-  background-color: chartreuse;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA9Ot8TUg8F1pmWsIeFyKCglgJ2pJk9P5zzRIhsmTluUN7-3fnIIAchSQyRFvHolUoASA&usqp=CAU);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size:xx-large;
 }
 
 .reviews-container{
@@ -92,17 +111,20 @@ div {
 }
 
 .contact-container{
-  background-image: url(https://w0.peakpx.com/wallpaper/249/735/HD-wallpaper-nobody-out-works-me-black-bodybuilding-bricks-grey-gym-motivation-out-works-raw-red-super.jpg);
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size:xx-large;
 }
 .card {
   text-align: center;
   /* border: grey solid 1px; */
-  width: 360px;
-  height: 360px;
+  width: 400px;
+  height: 400px;
   background: rgb(255, 255, 255);
   border-radius: 50%;
   margin: 1rem 2rem;
   box-shadow: 10px 12px #353333;
+  padding-top: 1%;
 }
 
 

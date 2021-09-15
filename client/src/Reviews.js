@@ -3,7 +3,7 @@ import ReviewsCard from "./ReviewsCard";
 function Reviews({reviews }) {
     return (
         <div className="reviews-container">
-            <h1> Reviews</h1>
+            <h1>Your Reviews</h1>
             {
             reviews.map(review => (
               <ReviewsCard key={reviews.id} review={review}/>

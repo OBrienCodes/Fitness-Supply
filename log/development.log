@@ -16034,3 +16034,1258 @@ No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", ra
 Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 8.6ms | Allocations: 5900)
 
 
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 01:39:52 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 01:39:52 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 01:39:52 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 01:39:52 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ProductreviewsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mProductreview Load (1.7ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  [1m[36mWorkout Load (1.9ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.09ms)
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+Completed 200 OK in 22ms (Views: 22.0ms | ActiveRecord: 9.6ms | Allocations: 12387)
+
+
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.25ms)
+Completed 200 OK in 28ms (Views: 28.0ms | ActiveRecord: 11.7ms | Allocations: 15174)
+
+
+[active_model_serializers]   [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (13.83ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 15.1ms | Allocations: 20108)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (29.79ms)
+Completed 200 OK in 52ms (Views: 51.7ms | ActiveRecord: 16.7ms | Allocations: 29370)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2021-09-15 01:43:19 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>1, "workout_id"=>1, "comment"=>"test", "rating"=>"test", "review"=>{"comment"=>"test", "rating"=>"test", "user_id"=>1, "workout_id"=>1}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:9:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `create'
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts" WHERE "workouts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `create'
+  [1m[36mReview Create (1.2ms)[0m  [1m[32mINSERT INTO "reviews" ("comment", "rating", "user_id", "workout_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comment", "test"], ["rating", "test"], ["user_id", 1], ["workout_id", 1], ["created_at", "2021-09-15 05:43:19.425783"], ["updated_at", "2021-09-15 05:43:19.425783"]]
+  ↳ app/controllers/reviews_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Review (0.15ms)
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 3.1ms | Allocations: 3535)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 01:43:30 -0400
+Processing by WorkoutsController#index as */*
+  [1m[36mWorkout Load (0.3ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.17ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 2071)
+
+
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 01:43:30 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 01:43:30 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 01:43:30 -0400
+Processing by ProductreviewsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mProductreview Load (1.5ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.19ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 1.9ms | Allocations: 4925)
+
+
+[active_model_serializers]   [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (15.83ms)
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 5.6ms | Allocations: 12459)
+
+
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (34.65ms)
+Completed 200 OK in 40ms (Views: 31.1ms | ActiveRecord: 8.5ms | Allocations: 20417)
+
+
+Started DELETE "/reviews/6" for 127.0.0.1 at 2021-09-15 01:44:24 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:15:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/reviews_controller.rb:15:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:15:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 1875)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 01:44:26 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 01:44:26 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 01:44:26 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 01:44:26 -0400
+  [1m[36mWorkout Load (1.2ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+Processing by ReviewsController#index as */*
+Processing by ProductreviewsController#index as */*
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.02ms)
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 1.2ms | Allocations: 3543)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.16ms)
+  [1m[36mProductreview Load (2.5ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.9ms | Allocations: 5877)
+
+
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (9.49ms)
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 2.4ms | Allocations: 9422)
+
+
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (25.05ms)
+Completed 200 OK in 34ms (Views: 25.8ms | ActiveRecord: 8.4ms | Allocations: 20410)
+
+
+Started GET "/reviews" for ::1 at 2021-09-15 01:47:14 -0400
+  
+SyntaxError (/Users/matthewobrien/Development/code/phase5/fitness-supply/app/controllers/reviews_controller.rb:5: syntax error, unexpected '\n', expecting =>
+/Users/matthewobrien/Development/code/phase5/fitness-supply/app/controllers/reviews_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/reviews_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/reviews_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/reviews_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/reviews_controller.rb:34: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/favicon.ico" for ::1 at 2021-09-15 01:47:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/reviews" for ::1 at 2021-09-15 01:47:51 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (14.52ms)
+Completed 200 OK in 31ms (Views: 17.0ms | ActiveRecord: 11.9ms | Allocations: 11815)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-09-15 01:47:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 10:05:31 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 10:05:31 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 10:05:31 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 10:05:31 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductreviewsController#index as */*
+Processing by ProductsController#index as */*
+  [1m[36mWorkout Load (5.4ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.27ms)
+Completed 200 OK in 41ms (Views: 13.8ms | ActiveRecord: 9.9ms | Allocations: 16214)
+
+
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  [1m[36mProductreview Load (1.4ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.97ms)
+Completed 200 OK in 61ms (Views: 36.2ms | ActiveRecord: 22.8ms | Allocations: 27598)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (5.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (41.68ms)
+[active_model_serializers]   [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 48.3ms | ActiveRecord: 35.4ms | Allocations: 38060)
+
+
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (46.53ms)
+Completed 200 OK in 104ms (Views: 47.7ms | ActiveRecord: 54.7ms | Allocations: 46179)
+
+
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 11:03:56 -0400
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 11:03:56 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 11:03:56 -0400
+Processing by ProductreviewsController#index as */*
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 11:03:56 -0400
+Processing by ReviewsController#index as */*
+  [1m[36mProductreview Load (0.8ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  [1m[36mWorkout Load (1.0ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+  [1m[36mReview Load (2.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+[active_model_serializers]   [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.06ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.04ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 10.5ms | Allocations: 14402)
+
+
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 10.6ms | Allocations: 15202)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (12.3ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 14.7ms | Allocations: 21909)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (32.16ms)
+Completed 200 OK in 53ms (Views: 52.9ms | ActiveRecord: 16.0ms | Allocations: 30516)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 11:10:38 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 11:10:38 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 11:10:38 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 11:10:38 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductreviewsController#index as */*
+  [1m[36mWorkout Load (0.9ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+  [1m[36mReview Load (2.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.04ms)
+  [1m[36mProductreview Load (1.4ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 7.4ms | Allocations: 13437)
+
+
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.12ms)
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+Completed 200 OK in 23ms (Views: 23.1ms | ActiveRecord: 7.3ms | Allocations: 14615)
+
+
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (12.34ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 12.5ms | Allocations: 19878)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (26.16ms)
+Completed 200 OK in 47ms (Views: 47.1ms | ActiveRecord: 13.9ms | Allocations: 28842)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 11:27:10 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 11:27:10 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 11:27:10 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 11:27:10 -0400
+Processing by ProductreviewsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.02ms)
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 10.0ms | Allocations: 12678)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.11ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 9.3ms | Allocations: 13552)
+
+
+  [1m[36mProductreview Load (1.3ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (8.88ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 31ms (Views: 30.9ms | ActiveRecord: 13.3ms | Allocations: 19173)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (25.05ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 15.8ms | Allocations: 29336)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 11:28:23 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 11:28:23 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+  [1m[36mWorkout Load (1.1ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 11:28:23 -0400
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.34ms)
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 11:28:23 -0400
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.1ms | Allocations: 3758)
+
+
+Processing by ProductreviewsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.18ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 1.1ms | Allocations: 5387)
+
+
+Processing by ReviewsController#index as */*
+  [1m[36mProductreview Load (0.9ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (13.53ms)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 2.8ms | Allocations: 8022)
+
+
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (28.37ms)
+Completed 200 OK in 34ms (Views: 28.6ms | ActiveRecord: 5.1ms | Allocations: 17360)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 11:30:17 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 11:30:17 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 11:30:17 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 11:30:17 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductreviewsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.6ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mProductreview Load (0.8ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.01ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 4817)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.1ms)
+[active_model_serializers]   [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.8ms | Allocations: 6257)
+
+
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (10.13ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 4.5ms | Allocations: 12435)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (28.79ms)
+Completed 200 OK in 35ms (Views: 28.9ms | ActiveRecord: 6.2ms | Allocations: 21637)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 11:52:46 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 11:52:46 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 11:52:46 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 11:52:46 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ProductreviewsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mWorkout Load (1.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.13ms)
+  [1m[36mProductreview Load (2.5ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 7.9ms | Allocations: 11494)
+
+
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.09ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 8.5ms | Allocations: 15168)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (10.99ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 13.3ms | Allocations: 20108)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (25.98ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 15.4ms | Allocations: 29188)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 12:05:38 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 12:05:38 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 12:05:38 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 12:05:38 -0400
+Processing by ProductsController#index as */*
+Processing by ProductreviewsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.8ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.11ms)
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 6.7ms | Allocations: 11044)
+
+
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.4ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  [1m[36mProductreview Load (2.9ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+Completed 200 OK in 21ms (Views: 20.9ms | ActiveRecord: 8.6ms | Allocations: 13155)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (9.43ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 12.9ms | Allocations: 19212)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (22.62ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 16.1ms | Allocations: 29375)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 13:34:10 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 13:34:10 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 13:34:10 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 13:34:10 -0400
+Processing by ReviewsController#index as */*
+Processing by ProductreviewsController#index as */*
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mWorkout Load (1.2ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.14ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.02ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 8.6ms | Allocations: 13565)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 9.9ms | Allocations: 14711)
+
+
+  [1m[36mProductreview Load (2.6ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (11.47ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 32ms (Views: 32.1ms | ActiveRecord: 11.4ms | Allocations: 19547)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (25.91ms)
+Completed 200 OK in 48ms (Views: 47.5ms | ActiveRecord: 14.6ms | Allocations: 28789)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 13:36:45 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 13:36:45 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 13:36:45 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 13:36:45 -0400
+Processing by ProductsController#index as */*
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductreviewsController#index as */*
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mWorkout Load (0.8ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProductreview Load (1.3ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.08ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.03ms)
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.8ms | Allocations: 5913)
+
+
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 1.3ms | Allocations: 6158)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (9.92ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 3.4ms | Allocations: 12828)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (26.57ms)
+Completed 200 OK in 35ms (Views: 27.6ms | ActiveRecord: 7.0ms | Allocations: 21174)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 13:36:47 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 13:36:47 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 13:36:47 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 13:36:47 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ProductreviewsController#index as */*
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProductreview Load (1.4ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.27ms)
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+[active_model_serializers]   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.7ms | Allocations: 5437)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.2ms)
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 1.4ms | Allocations: 6798)
+
+
+[active_model_serializers]   [1m[36mProduct Load (3.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (13.21ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 3.4ms | Allocations: 12015)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (25.55ms)
+Completed 200 OK in 33ms (Views: 25.6ms | ActiveRecord: 7.7ms | Allocations: 21131)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 13:51:17 -0400
+Processing by WorkoutsController#index as */*
+Started GET "/products" for 127.0.0.1 at 2021-09-15 13:51:17 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 13:51:17 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 13:51:17 -0400
+Processing by ProductsController#index as */*
+Processing by ProductreviewsController#index as */*
+Processing by ReviewsController#index as */*
+  [1m[36mWorkout Load (0.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.13ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 11.5ms | Allocations: 11030)
+
+
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mProductreview Load (1.0ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.15ms)
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 12.1ms | Allocations: 13931)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (10.77ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 15.7ms | Allocations: 20035)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (27.82ms)
+Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 18.0ms | Allocations: 29128)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 13:51:25 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 13:51:25 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 13:51:25 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 13:51:25 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductreviewsController#index as */*
+  [1m[36mWorkout Load (1.0ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.13ms)
+  [1m[36mProductreview Load (3.3ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.12ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 1.0ms | Allocations: 4145)
+
+
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 1.5ms | Allocations: 6131)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (11.13ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 3.8ms | Allocations: 12597)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (26.66ms)
+Completed 200 OK in 39ms (Views: 29.6ms | ActiveRecord: 8.7ms | Allocations: 21200)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 13:51:26 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 13:51:26 -0400
+Processing by WorkoutsController#index as */*
+Processing by ProductsController#index as */*
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 13:51:26 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 13:51:26 -0400
+  [1m[36mWorkout Load (1.1ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Processing by ProductreviewsController#index as */*
+Processing by ReviewsController#index as */*
+  ↳ app/controllers/products_controller.rb:5:in `index'
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.16ms)
+  [1m[36mReview Load (2.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mProductreview Load (2.7ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.1ms)
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 1.9ms | Allocations: 6093)
+
+
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 1.1ms | Allocations: 5506)
+
+
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (10.87ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 5.8ms | Allocations: 10293)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (26.76ms)
+Completed 200 OK in 36ms (Views: 29.1ms | ActiveRecord: 6.7ms | Allocations: 20024)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2021-09-15 13:51:35 -0400
+Started GET "/reviews" for 127.0.0.1 at 2021-09-15 13:51:35 -0400
+Started GET "/productreviews" for 127.0.0.1 at 2021-09-15 13:51:35 -0400
+Started GET "/products" for 127.0.0.1 at 2021-09-15 13:51:35 -0400
+Processing by WorkoutsController#index as */*
+Processing by ReviewsController#index as */*
+Processing by ProductreviewsController#index as */*
+Processing by ProductsController#index as */*
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mProductreview Load (0.2ms)[0m  [1m[34mSELECT "productreviews".* FROM "productreviews"[0m
+  ↳ app/controllers/productreviews_controller.rb:5:in `index'
+  [1m[36mWorkout Load (1.5ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts"[0m
+  ↳ app/controllers/reviews_controller.rb:5:in `index'
+  ↳ app/controllers/workouts_controller.rb:5:in `index'
+No serializer found for resource: #<Productreview id: 1, comment: "Unbelieveable Pump", rating: 10, product_id: 1, created_at: "2021-09-14 18:04:53.768490000 +0000", updated_at: "2021-09-14 18:04:53.768490000 +0000">
+No serializer found for resource: #<Review id: 1, comment: "Kicked my butt!", rating: "7", user_id: 1, workout_id: 1, created_at: "2021-09-14 18:04:53.678884000 +0000", updated_at: "2021-09-14 18:04:53.678884000 +0000">
+No serializer found for resource: #<Workout id: 1, name: "Booty Buster", description: "Bust your butt for the summer!", image_url: "https://www.mensjournal.com/wp-content/uploads/mf/...", created_at: "2021-09-14 18:04:53.619530000 +0000", updated_at: "2021-09-14 18:04:53.619530000 +0000">
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+[active_model_serializers]   [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Workout::ActiveRecord_Relation (1.04ms)
+  ↳ app/controllers/products_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 1.5ms | Allocations: 6587)
+
+
+No serializer found for resource: #<Product id: 1, name: "Resistance Bands Set", description: "Full body pump anywhere you go!", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:AN...", price: 30, created_at: "2021-09-14 18:04:53.712917000 +0000", updated_at: "2021-09-14 18:04:53.712917000 +0000">
+[active_model_serializers]   [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Product::ActiveRecord_Relation (1.22ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 1.9ms | Allocations: 8481)
+
+
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Review::ActiveRecord_Relation (15.79ms)
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 5.3ms | Allocations: 12889)
+
+
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/productreviews_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Productreview::ActiveRecord_Relation (30.69ms)
+Completed 200 OK in 36ms (Views: 28.9ms | ActiveRecord: 6.6ms | Allocations: 21304)
+
+

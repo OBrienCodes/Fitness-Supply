@@ -13,7 +13,6 @@ import NavBar from './NavBar';
 import Productreviews from './Productreviews';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Createreviewform from './Createreviewform';
 
 function App() {
   const [workouts, setWorkouts] = useState([])
