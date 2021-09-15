@@ -22,23 +22,6 @@ nav a:active {
   border-bottom: 2px solid rgb(124, 124, 124);
 }
 
-.card {
-  text-align: center;
-  /* border: grey solid 1px; */
-  width: 360px;
-  height: 360px;
-  background: white;
-  border-radius: 50%;
-  display: inline-grid;
-  margin: 1rem 2rem;
-  box-shadow: 10px 12px #353333;
-  background-color: rgb(255, 255, 255);
-}
-
-img {
-  height: 40mm;
-  width: 40mm
-}
 header {
   overflow-x: scroll;
   min-height: 375px;
@@ -54,8 +37,79 @@ header {
   border-bottom: 10px solid #082b34;
 }
 
+.maindiv{
+  background-color: rgb(255, 255, 255);
+  background-size:100%;
+
+}
+
 div {
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.workout-container{
+  display: grid;
+  grid-row: auto;
+  background-image: url(https://i.etsystatic.com/22567330/r/il/6a0840/2243843156/il_1588xN.2243843156_22cf.jpg)
+}
+
+.yourworkouts-container{
+  background-image: url(https://i.etsystatic.com/21567594/r/il/c4b745/3181619633/il_1588xN.3181619633_dp3q.jpg);
+  background-repeat:no-repeat;
+  background-size:100%;
+}
+
+.products-container{
+  background-image: url(https://m.media-amazon.com/images/I/719K9SasUnL._AC_SX466_.jpg);
+  background-repeat:no-repeat;
+  background-size:100%;
+}
+
+.cart-container{
+  background-image: url(https://thumbs.dreamstime.com/t/silhouette-businessman-mountain-top-sky-sunset-vector-77000367.jpg);
+  background-repeat:no-repeat;
+  background-size:100%;
+}
+
+.personaltraining-container{
+  background-color: chartreuse;
+}
+
+.onlinecoaching-container{
+  background-color: chartreuse;
+}
+
+.reviews-container{
+  background-image: url(https://graffiti-artist.net/wp-content/uploads/2017/10/mad-fitness-1.jpg);
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+
+.productreviews-container{
+  background-image: url(https://image.shutterstock.com/image-vector/black-white-background-gym-graffiti-260nw-1292853364.jpg);
+  background-size: 100%;
+}
+
+.contact-container{
+  background-image: url(https://w0.peakpx.com/wallpaper/249/735/HD-wallpaper-nobody-out-works-me-black-bodybuilding-bricks-grey-gym-motivation-out-works-raw-red-super.jpg);
+}
+.card {
+  text-align: center;
+  /* border: grey solid 1px; */
+  width: 360px;
+  height: 360px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  margin: 1rem 2rem;
+  box-shadow: 10px 12px #353333;
+}
+
+
+img {
+  height: 40mm;
+  width: 40mm
+}
+
+
 

@@ -7,7 +7,7 @@ function emptyCart(){
     alert('Congratulations On Investing In Your Health! Purchase Complete!')
 }
     return (
-        <div>
+        <div className="cart-container">
             <h1> The Best Investment You Can Make Is In Yourself <button onClick={emptyCart}>Checkout</button></h1>
             {
             products.map(product => (

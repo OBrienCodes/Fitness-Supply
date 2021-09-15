@@ -72,7 +72,7 @@ function App() {
 
 return(
   
-  <div>
+  <div className="maindiv">
     <Router>
     <NavBar />
     <Header />

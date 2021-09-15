@@ -5,7 +5,7 @@ function WorkoutCard({ workout, handleClick,}) {
   return (
     <div className="ui column">
       <div
-        className="ui card"
+        className="card"
         key={workout.id}
         onClick={() => handleClick(workout)}
       >

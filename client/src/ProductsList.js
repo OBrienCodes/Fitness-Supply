@@ -2,7 +2,7 @@ import Productcard from "./Productcard"
 
 function ProductsList({products, handleClick}) {
   return (
-    <div>
+    <div className="products-container">
        <h1>Choose Your Products</h1>
         {
           products.map(product => (

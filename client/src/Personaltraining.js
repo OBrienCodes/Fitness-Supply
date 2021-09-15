@@ -1,6 +1,6 @@
 function Personaltraining() {
     return(
-<div>
+<div className="personaltraining-container">
     Personal Training Packages
 
     As with my online coaching packages, I take personal training very seriously,  to get started lets set up a virtual meeting where we can discuss 

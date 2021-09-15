@@ -2,7 +2,7 @@ import ReviewsCard from "./ReviewsCard";
 
 function Reviews({reviews }) {
     return (
-        <div>
+        <div className="reviews-container">
             <h1> Reviews</h1>
             {
             reviews.map(review => (
